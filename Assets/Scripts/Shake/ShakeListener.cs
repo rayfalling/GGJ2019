@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Runtime.InteropServices.ComTypes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Shake{
     public class ShakeListener : MonoBehaviour{
         public float TotalTime = 10;
+        public GameObject Label= null;
 
         float _delta = 0;
         int _count;
@@ -29,6 +31,8 @@ namespace Assets.Scripts.Shake{
                 TotalTime -= Time.fixedDeltaTime;
             else
                 _timeover = true;
+
+            Label.GetComponent<TextMeshProUGUI>().text = TotalTime.ToString("F2");
         }
     }
 }
