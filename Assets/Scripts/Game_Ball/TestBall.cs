@@ -10,7 +10,7 @@ public class TestBall : MonoBehaviour
     public Transform[] RightGO;
     public float speed;
 
-    private float dir;
+    //private float dir;
     private float change;
     //[Range(-1,1)]
     //public float test;
@@ -21,8 +21,7 @@ public class TestBall : MonoBehaviour
         //test = 0;
         
         Input.gyro.enabled = true;
-        dir = 1;
-        change = change = Input.gyro.attitude.x;
+        change = 0;
     }
 
     // Update is called once per frame
@@ -31,24 +30,26 @@ public class TestBall : MonoBehaviour
         if (GameManager_GameBall.gm.IsPlaying() == false)
             return;
 
-        if (Screen.orientation == ScreenOrientation.LandscapeLeft)
-            dir = 1;
-        else if (Screen.orientation == ScreenOrientation.LandscapeRight)
-            dir = -1;
+        //if (Screen.orientation == ScreenOrientation.LandscapeLeft)
+        //    dir = 1;
+        //else if (Screen.orientation == ScreenOrientation.LandscapeRight)
+        //    dir = -1;
 
         text.text = Input.gyro.attitude.ToString();
-        change = Input.gyro.attitude.x;
+        change = Input.gyro.attitude.w-0.4f;
+        
+        Debug.Log(change);
 
         //change = test;
-        speed = speed + Time.deltaTime * 0.1f;
-        Vector3 cv = new Vector3(change, 0, 0) * speed * dir;
+        speed = speed + Time.deltaTime * 0.05f;
+        Vector3 cv = new Vector3(change, 0, 0) * speed;
         foreach (Transform posi in LeftGO)
         {
-            posi.position -= cv;
+            posi.position += cv;
         }
         foreach (Transform posi in RightGO)
         {
-            posi.position -= cv;
+            posi.position += cv;
         }
         //change = test;
         //change = Input.gyro.attitude.x

@@ -10,7 +10,7 @@ public class GameManager_GameBall : MonoBehaviour
     public static GameManager_GameBall gm;
     private void Awake()
     {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        //Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
     // Start is called before the first frame update
     void Start()
