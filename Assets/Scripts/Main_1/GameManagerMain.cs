@@ -54,6 +54,7 @@ public class GameManagerMain : MonoBehaviour
     public void ArrivePoint(GameObject p)
     {
         Debug.Log("GameArrive" + p.name);
+
         //BeginRoll();
     }
     public void BeginRoll()
