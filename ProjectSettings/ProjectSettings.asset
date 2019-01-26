@@ -147,8 +147,12 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
+<<<<<<< HEAD
   applicationIdentifier:
     Android: com.GGJ.GGJ2019
+=======
+  applicationIdentifier: {}
+>>>>>>> f13b58e6cf608ef62b73db51518c019f23ad0ca7
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

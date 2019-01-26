@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToPoint : MonoBehaviour
-{
+public class MoveToPoint : MonoBehaviour{
     private GameObject Player;
 
     
@@ -11,12 +10,12 @@ public class MoveToPoint : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
         Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
+<<<<<<< HEAD
     void Update()
     {
         
@@ -35,6 +34,15 @@ public class MoveToPoint : MonoBehaviour
 
     }
     
+=======
+    void Update(){ }
+
+    private void OnMouseDown(){
+        //Player.transform.Translate(this.transform.position - Player.transform.position);
+        Player.GetComponent<PlayMove>().PlayerMoveTo(this.gameObject);
+    }
+
+>>>>>>> f13b58e6cf608ef62b73db51518c019f23ad0ca7
     //public bool IsLinked(GameObject point)
     //{
     //    foreach(GameObject go in linkedpoints)
@@ -45,10 +53,8 @@ public class MoveToPoint : MonoBehaviour
     //    Debug.Log("未连接");
     //    return false;
     //}
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
+    private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.CompareTag("Player")) {
             Player.GetComponent<PlayMove>().StopMoving();
         }
     }
