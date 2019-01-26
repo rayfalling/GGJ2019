@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f28291801d3d842099047de4e378d8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TotalTime: 10
+  Label: {fileID: 680981577}
+  Ball: {fileID: 1757048743}
 --- !u!4 &12027932
 Transform:
   m_ObjectHideFlags: 0
@@ -612,7 +615,7 @@ MonoBehaviour:
     type: 3}
   SlowPlatformPrefab: {fileID: 2629537906498675673, guid: 27b4db170c7a149608bb61a837edf040,
     type: 3}
-  BallPostion: {fileID: 0}
+  BallPostion: {fileID: 1757048745}
   InitializationPlaforms: 30
   LevelWidth: 1.8
   MinY: 0.6
@@ -753,7 +756,6 @@ GameObject:
   - component: {fileID: 1757048744}
   - component: {fileID: 1757048746}
   - component: {fileID: 1757048747}
-  - component: {fileID: 1757048748}
   - component: {fileID: 1757048749}
   - component: {fileID: 1757048751}
   - component: {fileID: 1757048750}
@@ -885,20 +887,6 @@ PolygonCollider2D:
       - {x: -0.15741444, y: -0.47031176}
       - {x: -0.087543316, y: -0.49269402}
       - {x: -0.008586597, y: -0.49585426}
---- !u!114 &1757048748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757048743}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa539225cbcf340cea0d4824fe065baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  jumpAnim: {fileID: 1757048749}
 --- !u!111 &1757048749
 Animation:
   m_ObjectHideFlags: 0
@@ -928,7 +916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 8
-  TextLabel: {fileID: 680981577}
+  Camera: {fileID: 519420031}
 --- !u!251 &1757048751
 PlatformEffector2D:
   m_ObjectHideFlags: 0
