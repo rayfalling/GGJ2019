@@ -5,25 +5,23 @@ using UnityEngine;
 public class enermycontrol : MonoBehaviour{
     private List<GameObject> enermys;
     public GameObject enerm;
-    private float timer;
-    private float totaltime;
-    private float enspeed;
+    private float _timer;
+    private float _totaltime;
 
     public GameObject ground;
 
     // Start is called before the first frame update
     void Start(){
         enermys = new List<GameObject>();
-        totaltime = timer = 0;
-        enspeed = 5;
+        _totaltime = _timer = 0;
     }
 
     // Update is called once per frame
     void Update(){
-        totaltime += Time.deltaTime;
-        timer += Time.deltaTime;
-        if (timer >= Random.Range(1f, 2.5f) && GameObject.Find("grounds").GetComponent<background>().isstop == false) {
-            int i = (int) Random.Range(1f, 0.2f * totaltime + 1);
+        _totaltime += Time.deltaTime;
+        _timer += Time.deltaTime;
+        if (_timer >= Random.Range(1f, 2.5f) && GameObject.Find("grounds").GetComponent<background>().isstop == false) {
+            int i = (int) Random.Range(1f, 0.2f * _totaltime + 1);
             for (int j = 0; j < i; j++) {
                 GameObject go = Instantiate(enerm, new Vector2(Random.Range(-2.02f, 2.02f), 5.54f),
                     Quaternion.identity);
@@ -31,7 +29,7 @@ public class enermycontrol : MonoBehaviour{
                 enermys.Add(go);
             }
 
-            timer = 0;
+            _timer = 0;
         }
 
         if (enermys.Count > 0) {
@@ -45,10 +43,10 @@ public class enermycontrol : MonoBehaviour{
             }
         }
 
-        if (totaltime >= 15) //成功
+        if (_totaltime >= 15) //成功
         {
             Time.timeScale = 0;
-            totaltime = 0;
+            _totaltime = 0;
         }
     }
 }

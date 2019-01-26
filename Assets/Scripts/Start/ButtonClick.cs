@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonClick : MonoBehaviour{
@@ -9,6 +10,7 @@ public class ButtonClick : MonoBehaviour{
     }
 
     void StartGame(){
-        Debug.Log("Game Start");
+        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("MapUI",LoadSceneMode.Additive);
     }
 }
