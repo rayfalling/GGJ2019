@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_ball.unity
     guid: ba6aab6bbe691bd44a9b02fecd3214b9
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 7309b44e13b072744bdcb1ec4d24a944
   m_configObjects: {}
